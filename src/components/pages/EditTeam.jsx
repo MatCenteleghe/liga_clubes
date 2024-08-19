@@ -5,8 +5,9 @@ import Input from "../form/Input";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
 import axios from "axios";
+
+const apiUrl = import.meta.env.VITE_API_URL;
 
 function EditTeam() {
   const { id } = useParams();
@@ -16,7 +17,7 @@ function EditTeam() {
   useEffect(() => {
     async function getTeam() {
       try {
-        const response = await axios.get(`http://localhost:3000/teams/${id}`);
+        const response = await axios.get(`${apiUrl}/teams/${id}`);
         setTeam(response.data);
       } catch (error) {
         console.log(error);
@@ -28,7 +29,7 @@ function EditTeam() {
   async function changeTeam(e) {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:3000/teams/${id}`, team);
+      await axios.patch(`${apiUrl}/teams/${id}`, team);
       navigate("/teamLeague");
     } catch (error) {
       console.log(error);
