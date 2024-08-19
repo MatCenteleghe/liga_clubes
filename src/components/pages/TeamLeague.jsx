@@ -58,6 +58,7 @@ function TeamLeague() {
         <LinkButton to="/NewTeam" text="+ times" btnStyle="btn" />
       </div>
       <div className={styles.table_container}>
+        {render()}
         {loading ? (
           <p className={styles.loading}>Carregando...</p>
         ) : (
@@ -110,7 +111,7 @@ function TeamLeague() {
                       </Link>
                     </td>
                   </tr>
-                  {render()}
+                 
                 </tbody>
               ))
             )}
