@@ -51,13 +51,11 @@ function TeamMatches() {
   function getMatchId(match) {
     setMatch(match);
     setModalEditShow(true);
-    navigate("/teamMatches");
   }
 
   function removeMatch(id) {
     axios.delete(`${apiUrl}/matches/${id}`);
     getMatches.filter((match) => match.id !== id);
-    navigate("/teamMatches");
   }
   return (
     <section className={styles.matches_section}>

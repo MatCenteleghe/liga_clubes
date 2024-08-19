@@ -12,7 +12,6 @@ function NewTeam() {
 
   const apiUrl = import.meta.env.VITE_API_URL;
 
-
   async function createTeam(e) {
     e.preventDefault();
     teams.p = 0;
@@ -59,7 +58,6 @@ function NewTeam() {
             </p>
           </form>
         )}
-
         <div className={styles.linkbuttons}>
           <LinkButton to="/" text="Voltar" btnStyle="btn_red" />
           <LinkButton to="/teamLeague" text="Confirmar" btnStyle="btn" />

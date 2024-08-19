@@ -15,7 +15,6 @@ function AddMatch(props) {
     matches.goalTeam2 = "";
     try {
       await axios.post(`${apiUrl}/matches`, matches);
-      navigate("/teamMatches");
     } catch (error) {
       console.log(error);
     }

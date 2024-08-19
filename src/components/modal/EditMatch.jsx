@@ -76,7 +76,6 @@ function EditMatch(props) {
     e.preventDefault();
     try {
       await axios.patch(`${apiUrl}/matches/${id}`, editMatch);
-      navigate("/teamMatches");
     } catch (error) {
       console.log(error);
     }
