@@ -1,0 +1,79 @@
+.league_section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.addTeamButton {
+  margin-top: 50px;
+}
+
+.table_container {
+  margin-top: 20px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 80%;
+}
+.table {
+  width: 75px;
+}
+.btn_table {
+  width: 100px;
+}
+.deleteTeamButton {
+  width: 25px;
+  height: 25px;
+  border-radius: 2px;
+  color: red;
+  text-align: center;
+  transition: 0.5s;
+  font-size: 14px;
+}
+
+.deleteTeamButton:hover {
+  background-color: red;
+  color: white;
+}
+
+.editTeamButton {
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 2px;
+  color: rgb(0, 134, 16);
+  text-align: center;
+  transition: 0.5s;
+  font-size: 14px;
+}
+.editTeamButton:hover {
+  background-color: rgb(0, 134, 16);
+  color: white;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.loading {
+  margin-top: 10px;
+}
+
+@media (max-width: 750px) {
+  .table_container {
+    width: 99%;
+  }
+  .btn_table {
+    width: 120px;
+  }
+
+  .editTeamButton {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

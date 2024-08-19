@@ -1,0 +1,55 @@
+.newTeam_container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.newTeam_content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  height: 80%;
+  text-align: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+  gap: 25px;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+  height: 250px;
+}
+.form input {
+  padding: 5px;
+}
+.form button {
+  width: 100px;
+  height: auto;
+  align-self: center;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+
+.form p {
+  margin-top: 10px;
+  font-size: 15px;
+}
+.form p span {
+  color: green;
+}
+
+.linkbuttons {
+  display: flex;
+  align-self: center;
+  margin: 10px;
+  gap: 15px;
+}

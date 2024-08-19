@@ -1,0 +1,55 @@
+.navbar {
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+.btn_clicked {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 15px 70px 20px 70px;
+  transition: 0.5s;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: black;
+  border-radius: 2px;
+  background-color: green;
+}
+
+.btn {
+  color: green;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 15px 70px 20px 70px;
+  transition: 0.5s;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: black;
+  border-radius: 2px;
+}
+
+.btn:hover {
+  background-color: green;
+  color: white;
+}
+
+.btn_clicked:hover {
+  background-color: green;
+  color: white;
+}
+
+@media (max-width: 500px) {
+  .list {
+    gap: 60px;
+  }
+}
