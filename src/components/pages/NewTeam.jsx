@@ -10,8 +10,8 @@ function NewTeam() {
   const [teamCount, setTeamCount] = useState(0);
   const [loading, setLoading] = useState(false);
 
-  // const apiUrl = import.meta.env.VITE_API_URL;
-  const apiUrl = "https://liga-clubes-api.onrender.com";
+  const apiUrl = import.meta.env.VITE_API_URL;
+
 
   async function createTeam(e) {
     e.preventDefault();
