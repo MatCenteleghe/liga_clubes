@@ -8,8 +8,10 @@ import Footer from "../layouts/Footer";
 function NewTeam() {
   const [teams, setTeams] = useState([]);
   const [teamCount, setTeamCount] = useState(0);
+  const [loading, setLoading] = useState(false);
 
-  const apiUrl = import.meta.env.VITE_API_URL;
+  // const apiUrl = import.meta.env.VITE_API_URL;
+  const apiUrl = "https://liga-clubes-api.onrender.com";
 
   async function createTeam(e) {
     e.preventDefault();
@@ -23,11 +25,13 @@ function NewTeam() {
     teams.sg = 0;
 
     try {
+      setLoading(true);
       await axios.post(`${apiUrl}/teams`, teams);
       setTeamCount(teamCount + 1);
     } catch (error) {
       console.log(error);
     }
+    setLoading(false);
   }
 
   const handleAddTeam = (e) => {
@@ -38,20 +42,24 @@ function NewTeam() {
     <div className={styles.newTeam_container}>
       <div className={styles.newTeam_content}>
         <h1>Adicionar times </h1>
+        {loading ? (
+          <p>Adicionando...</p>
+        ) : (
+          <form className={styles.form} onSubmit={createTeam}>
+            <label>Nome dos times </label>
+            <Input
+              name="name"
+              placeholder="Digite o nome do time"
+              type="text"
+              handleChange={handleAddTeam}
+            />
+            <AddButton type="submit" text="Adicionar" />
+            <p>
+              Times adicionados:<span> {teamCount}</span>
+            </p>
+          </form>
+        )}
 
-        <form className={styles.form} onSubmit={createTeam}>
-          <label>Nome dos times </label>
-          <Input
-            name="name"
-            placeholder="Digite o nome do time"
-            type="text"
-            handleChange={handleAddTeam}
-          />
-          <AddButton type="submit" text="Adicionar" />
-          <p>
-            Times adicionados:<span> {teamCount}</span>
-          </p>
-        </form>
         <div className={styles.linkbuttons}>
           <LinkButton to="/" text="Voltar" btnStyle="btn_red" />
           <LinkButton to="/teamLeague" text="Confirmar" btnStyle="btn" />
