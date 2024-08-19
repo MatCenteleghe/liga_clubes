@@ -12,6 +12,7 @@ function EditMatch(props) {
   const [team1, setTeam1] = useState();
   const [team2, setTeam2] = useState();
   const navigate = useNavigate();
+
   const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
@@ -81,6 +82,7 @@ function EditMatch(props) {
     }
     updateTeam1(props.match?.team1Id);
     updateTeam2(props.match?.team2Id);
+    navigate("/teamMatches");
   }
 
   async function updateTeam1(id) {

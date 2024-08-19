@@ -6,7 +6,7 @@ import EditMatch from "../modal/EditMatch";
 import AddButton from "../layouts/AddButton";
 import axios from "axios";
 import { BsFillTrashFill } from "react-icons/bs";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Footer from "../layouts/Footer";
 
 function TeamMatches() {
@@ -17,7 +17,6 @@ function TeamMatches() {
   const [getMatches, setgetMatches] = useState([]);
   const [match, setMatch] = useState();
   const location = useLocation();
-  const navigate = useNavigate();
 
   const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -55,7 +54,7 @@ function TeamMatches() {
 
   function removeMatch(id) {
     axios.delete(`${apiUrl}/matches/${id}`);
-    getMatches.filter((match) => match.id !== id);
+    setgetMatches(getMatches.filter((match) => match.id !== id));
   }
   return (
     <section className={styles.matches_section}>

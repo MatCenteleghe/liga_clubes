@@ -7,17 +7,19 @@ import Modal from "react-bootstrap/Modal";
 function AddMatch(props) {
   const [matches, setMatches] = useState([]);
   const navigate = useNavigate();
+
   const apiUrl = import.meta.env.VITE_API_URL;
 
   async function createMatch(e) {
     e.preventDefault();
-    matches.goalTeam1 = "";
-    matches.goalTeam2 = "";
     try {
+      matches.goalTeam1 = "";
+      matches.goalTeam2 = "";
       await axios.post(`${apiUrl}/matches`, matches);
     } catch (error) {
       console.log(error);
     }
+    navigate("/teamMatches");
   }
   const handleTeam1 = (e) => {
     setMatches({
@@ -50,7 +52,7 @@ function AddMatch(props) {
         <form onSubmit={createMatch} className={styles.matches_form}>
           <label>{`Defina os times para a partida `}</label>
           <div className={styles.form_option}>
-            <select name="team1" id="team1_id" onChange={handleTeam1}>
+            <select name="team1" id="team1_id" onChange={handleTeam1} required>
               <option>Selecione uma opção</option>
               {props.teams.map((option) => (
                 <option value={option.id} key={option.id}>
