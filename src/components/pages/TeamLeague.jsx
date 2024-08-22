@@ -58,12 +58,13 @@ function TeamLeague() {
         <LinkButton to="/NewTeam" text="+ times" btnStyle="btn" />
       </div>
       <div className={styles.table_container}>
+        {render()}
         {loading ? (
           <p className={styles.loading}>Carregando...</p>
         ) : (
           <Table responsive size="sm" border="2px">
-            <thead className={styles.thead}>
-              <tr>
+            <thead>
+              <tr className={styles.table_columns}>
                 <th scope="col">Time</th>
                 <th scope="col">PTS</th>
                 <th scope="col">PJ</th>
@@ -87,15 +88,17 @@ function TeamLeague() {
               teams.map((team, index) => (
                 <tbody key={team.id}>
                   <tr className={styles.table_columns}>
-                    <td>{`${index + 1} | ${team.name}`}</td>
+                    <td className={styles.table}>{`${index + 1} | ${
+                      team.name
+                    }`}</td>
                     <td>{team.p}</td>
                     <td>{team.j}</td>
                     <td>{team.v}</td>
                     <td>{team.e}</td>
                     <td>{team.d}</td>
-                    <td className={styles.table}>{team.gm}</td>
-                    <td className={styles.table}>{team.gs}</td>
-                    <td className={styles.table}>{team.sg}</td>
+                    <td>{team.gm}</td>
+                    <td>{team.gs}</td>
+                    <td>{team.sg}</td>
                     <td className={styles.btn_table}>
                       <button
                         onClick={() => removeTeam(team.id)}
@@ -110,7 +113,6 @@ function TeamLeague() {
                       </Link>
                     </td>
                   </tr>
-                  {render()}
                 </tbody>
               ))
             )}

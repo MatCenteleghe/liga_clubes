@@ -51,5 +51,6 @@
 @media (max-width: 500px) {
   .list {
     gap: 60px;
+    justify-content: center;
   }
 }

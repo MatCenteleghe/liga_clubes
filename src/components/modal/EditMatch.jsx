@@ -530,27 +530,29 @@ function EditMatch(props) {
           onSubmit={(e) => updateMatch(props.match?.id, e)}
           className={styles.form}
         >
-          <label>
-            {props.match?.team1}
-            <input
-              type="number"
-              name="goalTeam1"
-              onChange={handleGoalTeams}
-              required="required"
-              value={editMatch?.goalTeam1 || ""}
-            />
-          </label>
-          <span>X</span>
-          <label>
-            <input
-              type="number"
-              name="goalTeam2"
-              onChange={handleGoalTeams}
-              required="required"
-              value={editMatch?.goalTeam2 || ""}
-            />
-            {props.match?.team2}
-          </label>
+          <div className={styles.form_content}>
+            <label>
+              {props.match?.team1}
+              <input
+                type="number"
+                name="goalTeam1"
+                onChange={handleGoalTeams}
+                required="required"
+                value={editMatch?.goalTeam1 || ""}
+              />
+            </label>
+            <span>X</span>
+            <label>
+              <input
+                type="number"
+                name="goalTeam2"
+                onChange={handleGoalTeams}
+                required="required"
+                value={editMatch?.goalTeam2 || ""}
+              />
+              {props.match?.team2}
+            </label>
+          </div>
           <div>
             <button
               type="submit"

@@ -44,3 +44,9 @@
   background-color: red;
   color: white;
 }
+@media (max-width: 575px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+}

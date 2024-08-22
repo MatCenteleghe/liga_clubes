@@ -80,3 +80,16 @@
 .loading {
   margin-top: 10px;
 }
+
+@media (max-width: 500px) {
+  .btn_container {
+    display: flex;
+    justify-content: start;
+    width: 80%;
+  }
+}
+@media (max-width: 350px) {
+  .match {
+    width: 290px;
+  }
+}

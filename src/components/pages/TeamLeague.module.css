@@ -18,11 +18,12 @@
   flex-wrap: wrap;
   height: 80%;
 }
+
 .table {
-  width: 75px;
+  width: 150px;
 }
 .btn_table {
-  width: 100px;
+  width: 90px;
 }
 .deleteTeamButton {
   width: 25px;
@@ -54,17 +55,11 @@
   color: white;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .loading {
   margin-top: 10px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 830px) {
   .table_container {
     width: 99%;
   }
@@ -73,7 +68,32 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
   .editTeamButton {
-    margin-left: 0;
+    margin-left: 10px;
     margin-top: 10px;
+  }
+}
+
+@media (max-width: 650px) {
+  .table_columns {
+    font-size: 13px;
+  }
+  .table {
+    width: 100px;
+  }
+  .btn_table {
+    width: 70px;
+  }
+}
+
+@media (max-width: 450px) {
+  .editTeamButton {
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+
+  .btn_table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 }
