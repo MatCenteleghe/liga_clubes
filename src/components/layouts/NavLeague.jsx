@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import styles from "./NavLeague.module.css";
+import { Link } from "react-router-dom";
 
 function NavLeague({ btn1Clicked, btn2Clicked }) {
   return (

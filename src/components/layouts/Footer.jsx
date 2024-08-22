@@ -1,6 +1,7 @@
 import styles from "./Footer.module.css";
 import LinkButton from "./LinkButton";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 function Footer() {
   return (
     <footer className={styles.footer}>

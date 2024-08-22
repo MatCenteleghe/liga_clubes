@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
-import NavLeague from "../layouts/NavLeague";
 import styles from "./TeamMatches.module.css";
+import Footer from "../layouts/Footer";
+import NavLeague from "../layouts/NavLeague";
 import AddMatch from "../modal/AddMatch";
 import EditMatch from "../modal/EditMatch";
 import AddButton from "../layouts/AddButton";
-import axios from "axios";
 import { BsFillTrashFill } from "react-icons/bs";
 import { useLocation } from "react-router-dom";
-import Footer from "../layouts/Footer";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function TeamMatches() {
   const [loading, setLoading] = useState(false);
@@ -17,7 +17,6 @@ function TeamMatches() {
   const [getMatches, setgetMatches] = useState([]);
   const [match, setMatch] = useState();
   const location = useLocation();
-
 
   const apiUrl = import.meta.env.VITE_API_URL;
 

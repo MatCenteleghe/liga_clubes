@@ -1,8 +1,8 @@
 import styles from "./AddMatch.module.css";
-import { useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function AddMatch(props) {
   const [matches, setMatches] = useState([]);

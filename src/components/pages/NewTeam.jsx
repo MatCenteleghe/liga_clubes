@@ -1,10 +1,11 @@
 import styles from "./NewTeam.module.css";
-import { useState } from "react";
-import axios from "axios";
 import LinkButton from "../layouts/LinkButton";
 import AddButton from "../layouts/AddButton";
 import Input from "../form/Input";
 import Footer from "../layouts/Footer";
+import { useState } from "react";
+import axios from "axios";
+
 function NewTeam() {
   const [teams, setTeams] = useState([]);
   const [teamCount, setTeamCount] = useState(0);

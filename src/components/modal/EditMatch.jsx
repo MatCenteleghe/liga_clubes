@@ -1,8 +1,8 @@
 import styles from "./EditMatch.module.css";
 import { Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 function EditMatch(props) {
   const [getMatch, setGetMatch] = useState();

@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import { BsFillTrashFill, BsPencil } from "react-icons/bs";
 import styles from "./TeamLeague.module.css";
-import axios from "axios";
+import Footer from "../layouts/Footer";
 import LinkButton from "../layouts/LinkButton";
 import NavLeague from "../layouts/NavLeague";
+import { BsFillTrashFill, BsPencil } from "react-icons/bs";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Footer from "../layouts/Footer";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function TeamLeague() {
   const [teams, setTeams] = useState([]);
