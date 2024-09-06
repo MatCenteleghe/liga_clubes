@@ -28,7 +28,7 @@ function EditMatch(props) {
     if (props.show) {
       getSingleMatch(props.match?.id);
     }
-  }, [props.match?.id]);
+  }, [props.show]);
 
   useEffect(() => {
     async function getTeam1(id) {
@@ -77,12 +77,12 @@ function EditMatch(props) {
     e.preventDefault();
     try {
       await axios.patch(`${apiUrl}/matches/${id}`, editMatch);
+      updateTeam1(props.match?.team1Id);
+      updateTeam2(props.match?.team2Id);
+      navigate("/teamMatches");
     } catch (error) {
       console.log(error);
     }
-    updateTeam1(props.match?.team1Id);
-    updateTeam2(props.match?.team2Id);
-    navigate("/teamMatches");
   }
 
   async function updateTeam1(id) {
@@ -92,10 +92,9 @@ function EditMatch(props) {
       console.log(error);
     }
   }
-
   async function updateTeam2(id) {
     try {
-      await axios.patch(`${apiUrl}/teams/${id}`, team2);
+      await axios.patch(`${url}/teams/${id}`, team2);
     } catch (error) {
       console.log(error);
     }
