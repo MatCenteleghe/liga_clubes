@@ -94,7 +94,7 @@ function EditMatch(props) {
   }
   async function updateTeam2(id) {
     try {
-      await axios.patch(`${url}/teams/${id}`, team2);
+      await axios.patch(`${apiUrl}/teams/${id}`, team2);
     } catch (error) {
       console.log(error);
     }
